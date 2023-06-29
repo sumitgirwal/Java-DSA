@@ -3,7 +3,7 @@ package Arrays;
 import java.util.Scanner;
 
 
-public class MinMax {
+public class Reverse {
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the array length: ");
@@ -23,18 +23,26 @@ public class MinMax {
         if(n==1){
             System.out.println(arr[0]);
         } else {
-            int mx = arr[0];
-            int mn = arr[0];
+            int i = 0;
+            int j = n-1;
 
-            for(int i : arr){
-                if(mx < i)
-                    mx = i; 
-                if(mn > i)
-                    mn = i;
+            while(i<=j){
+
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+
+                i+=1;
+                j-=1;
             }
-            System.out.println("Your Min and Max element : ");
-            System.out.println(mx+" "+mn);
+              
+        }
+        System.out.println();
+        System.out.println("Array Elements: ");
+        for(int i=0; i<n; i++){
+            System.out.print(arr[i]+" ");
         }
 
     }
 }
+

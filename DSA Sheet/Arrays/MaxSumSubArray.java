@@ -3,7 +3,7 @@ package Arrays;
 import java.util.Scanner;
 
 
-public class MinMax {
+public class MaxSumSubArray {
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the array length: ");
@@ -23,18 +23,28 @@ public class MinMax {
         if(n==1){
             System.out.println(arr[0]);
         } else {
-            int mx = arr[0];
-            int mn = arr[0];
-
+             
+            int currentSum = 0, mxSum = 0;
             for(int i : arr){
-                if(mx < i)
-                    mx = i; 
-                if(mn > i)
-                    mn = i;
+
+                currentSum += i;
+
+                if(currentSum>mxSum)
+                    mxSum = currentSum;
+
+                if(currentSum<0){
+                    currentSum = 0;
+                }
+
             }
-            System.out.println("Your Min and Max element : ");
-            System.out.println(mx+" "+mn);
+
+            System.out.println(mxSum);
+
+              
         }
+        
+         
 
     }
 }
+
