@@ -70,7 +70,7 @@ public class MergeSort {
 
     public static void main(String args[]){
 
-        int arr[] = {3, 2, 5, 7, 4};
+        int arr[] = { 9,8,7,6,5,4 };
         int n = arr.length;
         mergeSort(arr, 0, n-1);
         System.out.println();
